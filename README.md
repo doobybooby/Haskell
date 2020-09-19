@@ -80,7 +80,7 @@ returns: [2,3,4,5]
 EX: map (max 3) [1,2,3,4,5]
 returns: [3,3,3,4,5]
 
-| ### zipWith
+> ### zipWith
 combine two list with a funciton
 
 EX: zipWith (+) [1,1,1,2,3] [1,2,3,4,5]
