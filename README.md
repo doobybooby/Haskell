@@ -86,15 +86,15 @@ combine two list with a funciton
 EX: zipWith (+) [1,1,1,2,3] [1,2,3,4,5]
 returns: [2,3,4,6,8]
 
-| ### Flip
+> ### Flip
 
-| ### filter 
+> ### filter 
 takes function and a list. returns list of True elements;
 
 EX: filter (>5) [1..10]
 returns: [6,7,8,9,10]
 
-| ### takeWhile
+> ### takeWhile
 takes a function and a list. returns the elements until the condition fails.
 
 EX: takeWHile (<3) [1,2,3,4,5]
