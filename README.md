@@ -110,6 +110,199 @@ Taking a function that takes in multiple arguments into tuples of arguments.
 EX: sum3 4 5 6 == ((sum3 4) 5 ) 6)
 
 ### linked list
+how to create a linked list
+
+EX:
+5 : [] 
+returns: [5]
+
+EX:
+5:4:3[]
+returns [5,4,3]
+
+### .. (range)
+returns the range between two elements
+
+
+EX:
+let numbers = [1..10]
+numbers 
+returns: [1,2,3,4,5,6,7,8,9,10]
+
+
+EX:
+let numbers = ['a'.. 'g']
+numbers 
+returns: "abcdefg"
+
+EX:
+let numbers = [2,4..10]
+numbers 
+returns: [2,4,6,8,10]
+
+
+### head 
+returns the first element of the list
+
+EX: 
+let numbers = [1,2,3,4,5]
+head numbers
+returns: [1]
+
+### tail
+returns the list except for the first element
+
+EX:
+let numbers = [1,2,3,4,5]
+tail numbers
+returns: [2,3,4,5]
+
+EX:
+let numbers = [1,2,3,4,5]
+99: tail numbers
+returns: [99,2,3,4,5]
+
+
+EX:
+let numbers = [1,2,3,4,5]
+15:42:99: tail numbers
+returns: [15,42,99,2,3,4,5]
+
+
+### lenght
+returns the lenght of the list
+
+EX:
+let numbers = [1,2,3,4,5]
+lenght numbers
+returns: 6
+
+### reverse 
+returns the reverse order of the list
+
+EX:
+let numbers = [1,2,3,4,5]
+reverse numbers
+returns: [5,4,3,2,1]
+
+### !!- index
+returns the element of the index
+
+EX:
+let numbers = [1,2,3,4,5]
+numbers !! 3
+returns: [4]
+
+### last
+returns the last element of the list
+
+EX:
+let numbers = [1,2,3,4,5]
+last numbers
+returns: 5
+
+### init 
+returns everything but the last element
+
+EX:
+let numbers = [1,2,3,4,5]
+init numbers
+returns: [1,2,3,4]
+
+
+### null 
+checks if the given list is empty
+
+EX:
+let numbers = [1,2,3,4,5]
+null numbers
+returns: False
+
+EX:
+null []
+returns: True
+
+### elem
+checks if the given element is in the list
+
+EX:
+
+EX:
+let numbers = [1,2,3,4,5]
+elem 15 numbers
+returns: False
+
+
+### ++ (concatinator)
+concatinates two list
+
+
+EX:
+let numbers = [1,2,3,4,5]
+let cucumbers = [55,44,33,22,11]
+numbers ++ cucumbers
+returns: [1,2,3,4,5,55,44,33,22,11]
+
+### strings == list of characters
+
+EX:
+['H','e','l','l','o']
+returns: "Hello"
+
+### < && > (check alphabet order)
+compaers ascii, lexigraphic
+EX:
+"adam" < "banana"
+returns: True
+
+EX:
+"app" > "apple"
+returns False;
+
+### maximum 
+returns the maximum element within the list
+
+EX:
+let numbers = [1,2,3,4,5]
+maximum numbers
+returns: 5
+
+### minimum
+returns the minimum element within the list
+
+EX:
+let numbers = [1,2,3,4,5]
+minimum numbers
+returns: 1
+
+### list inside list [[][]]
+you can make a list of lists
+
+EX: 
+let numbers = [1,2,3,4,5]
+let cucumbers = [6,7,8,9,10]
+let apples = [numbers,cucumbers]
+apples
+returns: [[1,2,3,4,5],[6,7,8,9,10]]
+
+### sum
+returns the total sum of the list
+
+EX:
+let numbers = [1,2,3,4,5]
+sum numbers
+returns: 15
+
+### product 
+returns the total product of the list
+
+
+EX:
+let numbers = [1,2,3,4,5]
+product numbers
+returns: 120
+
+
 
 
 
