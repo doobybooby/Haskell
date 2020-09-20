@@ -1,14 +1,18 @@
 # Haskell
-Lean how to code haskell.
-Haskell is LAZY, unlike object oriented programming
-Haskell reads basked on indentation
+## Lean how to code haskell.
+
+* Haskell is LAZY
+* Haskell reads based on indentation (like python)
+
+### Types
+
+* Types are sets of values
+
+* Typeclasses are sets of types
 
 ### Syntax
 
-Types are sets of values
-Typeclasses are sets of types
-
--- is to comment 
+* -- is to comment 
 
 To find out what type x is;
 :t 'x' 
