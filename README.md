@@ -21,6 +21,7 @@ Prelude> :t 'c'
 'c':: Char
 
 ```
+
 ## Functions
 
 > f :: [Int] -> Int
@@ -34,17 +35,24 @@ Prelude> :t 'c'
 ## Loop
 
 ###### Loop Expression
+
+```
 > pattern... **=** result
+```
 
 ###### Guard Expression
+
 ```
 pattern
 **|** expression **=** result
 **| otherwise =** result
 ```
+
 ###### Where Expression //Can only be used inside a definition, never nested
+```
 result **where**
 pattern... **=** result
+```
 
 ###### Let Expression //Can be used anywhere, can be nested 
 **let** pattern... **=** result
