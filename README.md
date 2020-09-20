@@ -27,7 +27,7 @@ Prelude> :t 'c'
 > f :: [Int] -> Int
 > -- function f takes in [int] and returns an Int.
 
-## Syntax
+## comment
 
 * -- is to comment 
 
