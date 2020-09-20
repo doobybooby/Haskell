@@ -37,21 +37,21 @@ Prelude> :t 'c'
 ###### Loop Expression
 
 ```
-> pattern... **=** result
+> pattern... = result
 ```
 
 ###### Guard Expression
 
 ```
 pattern
-**|** expression **=** result
-**| otherwise =** result
+| expression = result
+| otherwise = result
 ```
 
 ###### Where Expression //Can only be used inside a definition, never nested
 ```
-result **where**
-pattern... **=** result
+result where
+pattern... = result
 ```
 
 ###### Let Expression //Can be used anywhere, can be nested 
