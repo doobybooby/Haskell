@@ -6,7 +6,23 @@
 ## Types
 
 1. Types are sets of values
+* Int
+* Integer
+* Float
+* Double
+* Bool
+* Char
+
 2. Typeclasses are sets of types
+* Eq -- check for equality
+* Ord -- check for ordering, must be part of Eq
+* Show -- return the string version
+* Read -- takes a string, and returns the string type
+* Enum -- Sequential order types
+* Bounded -- Has an upper bound and lower bound. 
+* Num - takes two number of the same type and returns a number of that type
+* Integral
+* Floating
 3. To find out what type x is;
 
 > :t
@@ -120,13 +136,13 @@ returns: [2,3,4,6,8]
 ```
 
 ###### filter 
-> Takes function and a list. returns list of True elements;
+> * Takes function and a list. returns list of True elements;
 ```
 EX: filter (>5) [1..10]
 returns: [6,7,8,9,10]
 ```
 ###### takeWhile
-> Takes a function and a list. returns the elements until the condition fails.
+> * Takes a function and a list. returns the elements until the condition fails.
 ```
 EX: takeWhile (<3) [1,2,3,4,5]
 returns: [1,2]
@@ -135,12 +151,12 @@ EX: takeWhile (>3) [1,2,3,4,5]
 returns: []
 ```
 ## Currying
-* Taking a function that takes in multiple arguments into tuples of arguments.
+> * Taking a function that takes in multiple arguments into tuples of arguments.
 ```
 EX: sum3 4 5 6 == ((sum3 4) 5 ) 6)
 ```
 ## linked list
-* How to create a linked list
+> * How to create a linked list
 ```
 EX:
 5 : [] 
@@ -191,6 +207,14 @@ EX:
 let numbers = [1,2,3,4,5]
 head numbers
 returns: [1]
+```
+###### Last
+* Returns, the last element of the list
+```
+EX: 
+let numbers = [1,2,3,4,5]
+last numbers
+returns: [5]
 ```
 ###### Tail
 * Returns, the list except for the first element
@@ -390,7 +414,7 @@ returns: "hose"
 ```
 ```
 EX: -- takes two different arguments
-[[x * y | y <- [1..5]] | x <- [1..5]]
+[[x * y | y <- [1..5]], x <- [1..5]]
 returns: [1,2,3,4,5], [2,4,6,8,10], [3,6,9,12,15], [4,8,12,16,20], [5,10,15,20,25]
 ```
 ###### drop
@@ -402,13 +426,21 @@ let numbers [1,2,3,4,5]
 drop 2 numbers
 returns: [3,4,5]
 ```
-
 ```
 EX:
 let numbers [1,2,3,4,5]
 drop 3 numbers
 returns: [4,5]
 ```
+###### dropWhile
+* drops the x number of elements in a list while a condition is true
+```
+EX:
+let numbers [1,2,3,4,5]
+dropWhile (<3) numbers
+returns: [3,4,5]
+```
+
 ###### Cycle
 * Returns, a list, created by circular list from a finite list
 
@@ -424,13 +456,19 @@ take 5 (cycle[ABC])
 returns: "ABCAb"
 ```
 ## Split
-###### splitOn
+###### splitAt
 ###### splitWhen
 ###### splitOneOf
 ###### endBy
 ###### chuncksOf
 
-### repeat
+###### repeat
+* returns a list created by a repeating a value
+```
+EX:
+
+```
+
 ### replicate
 
 ## Lambda 
@@ -450,11 +488,67 @@ EX:
 foldl (+)0 [1,2,3,4,5]
 15
 ```
+
+```
+EX:
+foldl (-)0 [1,2,3,4,5]
+-15
+```
 ```
 EX:
 foldl (*)2 [1,2,3,4,5]
 240
 ```
+###### foldR (a->b->a) -> a -> [b] -> a
+* Takes the second ARGUMENT, and last ITEM of the list, and apply function. Take the result and the (last-1) ITEM of the list, and so on.
+
+```
+EX:
+Prelude> foldr (+)0 [1,2,3,4,5]
+15
+```
+```
+EX:
+Prelude> foldr (-)0 [1,2,3,4,5]
+3
+```
+
+## Module
+
+###### How to add modules
+> :m + Name.module
+```
+EX:
+Prelude> :m + Data.List
+```
+
+
+###### Just
+###### Nothing
+###### Maybe
+
+## Instances 
+
+## How to creat your own type
+```
+--Name of this file is, cards.hs
+
+import Data.List
+
+data Rank = Ace |Two | Three | Four | Five | Six | Seven | Eight| Nine| Ten | Jack | Queen | King deriving (Eq, Enum, Show, Read)
+
+data Suit = Spade | Heart | Club | Diamond (Eq, Show, Read)
+
+data Card = Card Rank Suit deriving (Eq, Show, Read)
+
+type hand = [Card]
+
+-- more code to make sure everything works properly
+```
+```
+Terminal: ghci
+Prelude> :l cards
+*Main: 
 
 
 
