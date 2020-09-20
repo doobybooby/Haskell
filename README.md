@@ -55,30 +55,35 @@ pattern... = result
 ```
 
 ###### Let Expression //Can be used anywhere, can be nested 
-**let** pattern... **=** result
-**in** result
-
+```
+let pattern... = result
+in result
+```
 ###### Case Expression
-**case** expression **of** pattern... **->** result
+```
+case expression of pattern... -> result
+```
 
-### boolean expressions 
+## boolean expressions 
+```
 && --and
 || -- or
 True
 False
 not
+```
 
-### if and else
-Haskell always has to return a value
-
+## if and else
+* Haskell always has to return a value
+```
 EX:
 random r = if r ==1
               then "r is one"
               else "r is not one"
-
-### let 
-to define functions on the fly
-
+```
+## let 
+* to define functions on the fly
+```
 EX: let squareAddOne x = x*x+1
 
 squareAddOne 2
@@ -87,55 +92,56 @@ returns: 5
 squareAddone 3
 
 returns: 10
-
+```
+```
 EX: 
 let x = 4
 let y = 7
 
 max x y
 returns: 7
+```
 
-
-### map, (a => b) -> [a] -> [b]
-takes a function and a list, returns a new list, applies function to each element 
-
+## map, (a => b) -> [a] -> [b]
+> takes a function and a list, returns a new list, applies function to each element 
+```
 EX: map add1 [1,2,3,4]
 returns: [2,3,4,5]
-
+```
+```
 EX: map (max 3) [1,2,3,4,5]
 returns: [3,3,3,4,5]
-
-> ### zipWith
-combine two list with a funciton
-
+```
+###### zipWith
+> combine two list with a funciton
+```
 EX: zipWith (+) [1,1,1,2,3] [1,2,3,4,5]
 returns: [2,3,4,6,8]
+```
 
-> ### Flip
-
-> ### filter 
-takes function and a list. returns list of True elements;
-
+###### filter 
+> takes function and a list. returns list of True elements;
+```
 EX: filter (>5) [1..10]
 returns: [6,7,8,9,10]
-
-> ### takeWhile
-takes a function and a list. returns the elements until the condition fails.
-
+```
+###### takeWhile
+> takes a function and a list. returns the elements until the condition fails.
+```
 EX: takeWHile (<3) [1,2,3,4,5]
 returns: [1,2]
 
 EX: takeWHile (>3) [1,2,3,4,5]
 returns: []
-
-### Currying
+```
+## Currying
 Taking a function that takes in multiple arguments into tuples of arguments.
-
+```
 EX: sum3 4 5 6 == ((sum3 4) 5 ) 6)
-
-### linked list
+```
+## linked list
 how to create a linked list
-
+```
 EX:
 5 : [] 
 returns: [5]
@@ -143,10 +149,10 @@ returns: [5]
 EX:
 5:4:3[]
 returns [5,4,3]
-
-### .. (range)
+```
+###### .. (range)
 returns the range between two elements
-
+```
 
 EX:
 let numbers = [1..10]
@@ -175,18 +181,18 @@ EX:
 let numbers = [2,4..]
 numbers 
 returns: infinite loop
-
-### head 
+```
+###### head 
 returns the first element of the list
-
+```
 EX: 
 let numbers = [1,2,3,4,5]
 head numbers
 returns: [1]
-
-### tail
+```
+###### tail
 returns the list except for the first element
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 tail numbers
@@ -202,52 +208,52 @@ EX:
 let numbers = [1,2,3,4,5]
 15:42:99: tail numbers
 returns: [15,42,99,2,3,4,5]
+```
 
-
-### lenght
-returns the lenght of the list
-
+###### lenght
+> returns the lenght of the list
+```
 EX:
 let numbers = [1,2,3,4,5]
 lenght numbers
 returns: 6
-
-### reverse 
+```
+###### reverse 
 returns the reverse order of the list
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 reverse numbers
 returns: [5,4,3,2,1]
-
-### !!- index
+```
+###### !!- index
 returns the element of the index
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 numbers !! 3
 returns: [4]
-
-### last
+```
+###### last
 returns the last element of the list
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 last numbers
 returns: 5
-
-### init 
+```
+###### init 
 returns everything but the last element
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 init numbers
 returns: [1,2,3,4]
 
-
-### null 
+```
+###### null 
 checks if the given list is empty
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 null numbers
@@ -256,10 +262,10 @@ returns: False
 EX:
 null []
 returns: True
-
-### elem
+```
+###### elem
 checks if the given element is in the list
-
+```
 
 EX:
 let numbers = [1,2,3,4,5]
@@ -270,26 +276,27 @@ EX:
 let numbers = [1,2,3,4,5]
 3 `elem` numbers
 returns: True
+```
 
-
-### ++ (concatinator)
+###### ++ (concatinator)
 concatinates two list
-
+```
 
 EX:
 let numbers = [1,2,3,4,5]
 let cucumbers = [55,44,33,22,11]
 numbers ++ cucumbers
 returns: [1,2,3,4,5,55,44,33,22,11]
-
-### strings == list of characters
-
+```
+## strings == list of characters
+```
 EX:
 ['H','e','l','l','o']
 returns: "Hello"
-
-### < && > (check alphabet order)
-compaers ascii, lexigraphic
+```
+###### < && > (check alphabet order)
+> compaers ascii, lexigraphic
+```
 EX:
 "adam" < "banana"
 returns: True
@@ -297,51 +304,51 @@ returns: True
 EX:
 "app" > "apple"
 returns False;
-
-### maximum 
-returns the maximum element within the list
-
+```
+###### maximum 
+* returns the maximum element within the list
+```
 EX:
 let numbers = [1,2,3,4,5]
 maximum numbers
 returns: 5
-
-### minimum
-returns the minimum element within the list
-
+```
+###### minimum
+* returns the minimum element within the list
+```
 EX:
 let numbers = [1,2,3,4,5]
 minimum numbers
 returns: 1
-
-### list inside list [[][]]
-you can make a list of lists
-
+```
+###### list inside list [[][]]
+* you can make a list of lists
+```
 EX: 
 let numbers = [1,2,3,4,5]
 let cucumbers = [6,7,8,9,10]
 let apples = [numbers,cucumbers]
 apples
 returns: [[1,2,3,4,5],[6,7,8,9,10]]
-
-### sum
+```
+###### sum
 returns the total sum of the list
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 sum numbers
 returns: 15
-
-### product 
+```
+###### product 
 returns the total product of the list
 
-
+```
 EX:
 let numbers = [1,2,3,4,5]
 product numbers
 returns: 120
-
-### take
+```
+###### take
 takes the x number of element from the list
 
 
@@ -350,9 +357,9 @@ let numbers = [1,2..10]
 take 5
 returns: [1,2,3,4,5]
 
-### list comprehension
-Expression | variable values, conditions/constraints
-
+## list comprehension
+> Expression | variable values, conditions/constraints
+```
 EX:
 [2^n | n <- [1..5]]
 returns: [2,4,8,16,32]
@@ -379,7 +386,7 @@ returns: "hose"
 EX: -- takes two different arguments
 [[x * y | y <- [1..5]] | x <- [1..5]]
 returns: [1,2,3,4,5], [2,4,6,8,10], [3,6,9,12,15], [4,8,12,16,20], [5,10,15,20,25]
-
+```
 ### drop
 ### cycle
 ### repeat
