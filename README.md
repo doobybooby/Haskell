@@ -9,14 +9,16 @@
 1. Types are sets of values
 2. Typeclasses are sets of types
 3. To find out what type x is;
-***
-> Prelude> :t 'x' 
->> EX:
->> :t 5
+
+```
+-- Prelude> :t 'x' 
+> EX:
+Prelude> :t 6
+5 :: Num p => p
 
 > f :: [Int] -> Int
 > -- function f takes in [int] and returns an Int.
-***
+```
 ### Syntax
 
 * -- is to comment 
