@@ -3,7 +3,7 @@
 1. Haskell is LAZY
 2. Haskell reads based on indentation (like python)
 
-### Types
+## Types
 
 1. Types are sets of values
 2. Typeclasses are sets of types
@@ -21,7 +21,7 @@ Prelude> :t 'c'
 'c':: Char
 
 ```
-### Functions
+## Functions
 
 > f :: [Int] -> Int
 > -- function f takes in [int] and returns an Int.
