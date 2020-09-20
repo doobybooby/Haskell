@@ -1,5 +1,4 @@
-# Haskell
-## Lean how to code haskell.
+# Learn to Haskell
 
 1. Haskell is LAZY
 2. Haskell reads based on indentation (like python)
@@ -10,15 +9,23 @@
 2. Typeclasses are sets of types
 3. To find out what type x is;
 
+> :t
+
 ```
--- Prelude> :t 'x' 
-> EX:
-Prelude> :t 6
+EX:
+Prelude>:t 5
 5 :: Num p => p
+
+EX:
+Prelude> :t 'c'
+'c':: Char
+
+```
+### Functions
 
 > f :: [Int] -> Int
 > -- function f takes in [int] and returns an Int.
-```
+
 ### Syntax
 
 * -- is to comment 
