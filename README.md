@@ -314,25 +314,15 @@ maximum numbers
 returns: 5
 ```
 ###### minimum
-* returns the minimum element within the list
+* Returns, the minimum element within the list
 ```
 EX:
 let numbers = [1,2,3,4,5]
 minimum numbers
 returns: 1
 ```
-###### list inside list [[][]]
-* you can make a list of lists
-```
-EX: 
-let numbers = [1,2,3,4,5]
-let cucumbers = [6,7,8,9,10]
-let apples = [numbers,cucumbers]
-apples
-returns: [[1,2,3,4,5],[6,7,8,9,10]]
-```
 ###### sum
-returns the total sum of the list
+* Returns, the total sum of the list
 ```
 EX:
 let numbers = [1,2,3,4,5]
@@ -340,7 +330,7 @@ sum numbers
 returns: 15
 ```
 ###### product 
-returns the total product of the list
+* Returns, the total product of the list
 
 ```
 EX:
@@ -349,40 +339,52 @@ product numbers
 returns: 120
 ```
 ###### take
-takes the x number of element from the list
-
-
+* takes the x number of element from the list
+```
 EX:
 let numbers = [1,2..10]
 take 5
 returns: [1,2,3,4,5]
-
+```
+## list inside list [[][]]
+* You can make a list of lists
+```
+EX: 
+let numbers = [1,2,3,4,5]
+let cucumbers = [6,7,8,9,10]
+let apples = [numbers,cucumbers]
+apples
+returns: [[1,2,3,4,5],[6,7,8,9,10]]
+```
 ## list comprehension
 > Expression | variable values, conditions/constraints
 ```
 EX:
 [2^n | n <- [1..5]]
 returns: [2,4,8,16,32]
-
-
+```
+```
 EX:
 let numbers = [1,2,3,4,5]
 [2^n | n <- numbers]
 returns: [2,4,8,16,32]
-
-
+```
+```
 EX: -- return, 2 to the power of n | while n is 1-5 , as long as 2^n <10
 [2^n | n <- [1..5], 2^n<10]
 returns: [2,4,8]
-
+```
+```
 EX: -- removes the letter r from any given word
 [x | x <- "horse", not (elem x "r")]
 returns: "hose"
-
+```
+```
 EX: -- removes the letter r from every word in a list
 [x | x <- word, not (elem x "r")] **| word <- ["horse", "marry", "roar"]**
 returns: "hose"
-
+```
+```
 EX: -- takes two different arguments
 [[x * y | y <- [1..5]] | x <- [1..5]]
 returns: [1,2,3,4,5], [2,4,6,8,10], [3,6,9,12,15], [4,8,12,16,20], [5,10,15,20,25]
