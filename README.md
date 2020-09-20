@@ -10,10 +10,12 @@
 2. Typeclasses are sets of types
 3. To find out what type x is;
 
-:t 'x' 
+> :t 'x' 
+>> EX:
+>> :t 5
 
-f :: [Int] -> Int
-//function f takes in [int] and returns an Int.
+> f :: [Int] -> Int
+> -- function f takes in [int] and returns an Int.
 
 ### Syntax
 
