@@ -128,10 +128,10 @@ returns: [6,7,8,9,10]
 ###### takeWhile
 > Takes a function and a list. returns the elements until the condition fails.
 ```
-EX: takeWHile (<3) [1,2,3,4,5]
+EX: takeWhile (<3) [1,2,3,4,5]
 returns: [1,2]
 
-EX: takeWHile (>3) [1,2,3,4,5]
+EX: takeWhile (>3) [1,2,3,4,5]
 returns: []
 ```
 ## Currying
@@ -150,7 +150,8 @@ EX:
 5:4:3[]
 returns [5,4,3]
 ```
-###### .. (range)
+###### Range
+* ".." is used to define a range
 * Returns, the range between two elements
 ```
 
@@ -183,7 +184,7 @@ let numbers = [2,4..]
 numbers 
 returns: infinite loop
 ```
-###### head 
+###### Head 
 * Returns, the first element of the list
 ```
 EX: 
@@ -191,7 +192,7 @@ let numbers = [1,2,3,4,5]
 head numbers
 returns: [1]
 ```
-###### tail
+###### Tail
 * Returns, the list except for the first element
 ```
 EX:
@@ -220,7 +221,7 @@ let numbers = [1,2,3,4,5]
 lenght numbers
 returns: 6
 ```
-###### reverse 
+###### Reverse 
 returns the reverse order of the list
 ```
 EX:
@@ -228,7 +229,8 @@ let numbers = [1,2,3,4,5]
 reverse numbers
 returns: [5,4,3,2,1]
 ```
-###### !!- index
+###### Index
+* "!!" is used to define the index
 * Returns, the element of the index
 ```
 EX:
@@ -391,11 +393,69 @@ EX: -- takes two different arguments
 [[x * y | y <- [1..5]] | x <- [1..5]]
 returns: [1,2,3,4,5], [2,4,6,8,10], [3,6,9,12,15], [4,8,12,16,20], [5,10,15,20,25]
 ```
-### drop
-### cycle
+###### drop
+* drops the x number of elements in a list
+
+```
+EX:
+let numbers [1,2,3,4,5]
+drop 2 numbers
+returns: [3,4,5]
+```
+
+```
+EX:
+let numbers [1,2,3,4,5]
+drop 3 numbers
+returns: [4,5]
+```
+###### Cycle
+* Returns, a list, created by circular list from a finite list
+
+
+```
+EX:
+take 10 (cycle[1,2,3])
+returns: [1,2,3,1,2,3,1]
+```
+```
+EX:
+take 5 (cycle[ABC])
+returns: "ABCAb"
+```
+## Split
+###### splitOn
+###### splitWhen
+###### splitOneOf
+###### endBy
+###### chuncksOf
+
 ### repeat
 ### replicate
 
+## Lambda 
+* "(\)" is used for lambda expression
+* allows to create a function without giving it a name
+* (\argumentToFunction -> Result) 
+```
+EX: 
+map (\x -> x+1) [1..5]
+[2,3,4,5,6]
+```
+###### foldl (a->b->a) -> a -> [b] -> a
+* Takes the second ARGUMENT, and first ITEM of the list, and apply function. Take the result and the second ITEM of the list, and so on.
+
+```
+EX:
+foldl (+)0 [1,2,3,4,5]
+15
+```
+```
+EX:
+foldl (*)2 [1,2,3,4,5]
+240
+```
 
 
-### CABAL
+
+## CABAL
