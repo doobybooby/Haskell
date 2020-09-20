@@ -26,31 +26,32 @@ Prelude> :t 'c'
 > f :: [Int] -> Int
 > -- function f takes in [int] and returns an Int.
 
-### Syntax
+## Syntax
 
 * -- is to comment 
 
 
-Loop
-pattern... **=** result
+## Loop
 
-guard expression
+###### Loop Expression
+> pattern... **=** result
+
+###### Guard Expression
+```
 pattern
 **|** expression **=** result
 **| otherwise =** result
-
-where expression //Can only be used inside a definition, never nested
+```
+###### Where Expression //Can only be used inside a definition, never nested
 result **where**
 pattern... **=** result
 
-let expression //Can be used anywhere, can be nested 
+###### Let Expression //Can be used anywhere, can be nested 
 **let** pattern... **=** result
 **in** result
 
-case expression
+###### Case Expression
 **case** expression **of** pattern... **->** result
-
-### Download EMACS and GHCI on linux
 
 ### boolean expressions 
 && --and
