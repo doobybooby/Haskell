@@ -1,24 +1,24 @@
 # Haskell
 ## Lean how to code haskell.
 
-* Haskell is LAZY
-* Haskell reads based on indentation (like python)
+1. Haskell is LAZY
+2. Haskell reads based on indentation (like python)
 
 ### Types
 
-* Types are sets of values
+1. Types are sets of values
+2. Typeclasses are sets of types
+3. To find out what type x is;
 
-* Typeclasses are sets of types
+:t 'x' 
+
+f :: [Int] -> Int
+//function f takes in [int] and returns an Int.
 
 ### Syntax
 
 * -- is to comment 
 
-To find out what type x is;
-:t 'x' 
-
-f :: [Int] -> Int
-//function f takes in [int] and returns an Int.
 
 Loop
 pattern... **=** result
