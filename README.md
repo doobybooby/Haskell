@@ -549,7 +549,18 @@ type hand = [Card]
 Terminal: ghci
 Prelude> :l cards
 *Main: 
+```
 
-
+## Module
+* Haskell Module is a collection of related functions, types, and typeclasses.
+* to import a module, you use the key word *import* <Module Name>
+```
+import Data.List
+```
+* If you are using a GHCI you can use *:m + <Module Name>*
+```
+  Prelude> :m + Data.List
+  ```
+  
 
 ## CABAL
