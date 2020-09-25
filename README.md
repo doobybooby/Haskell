@@ -554,13 +554,22 @@ Prelude> :l cards
 ## Module
 * Haskell Module is a collection of related functions, types, and typeclasses.
 * to import a module, you use the key word *import* <Module Name>
-```
+  * you can specify which functions to retrieve from the module. *import* <ModuleName(functions)>
+  * you import a module, then hide a specific function *import* <ModuelName> *hiding* (function)
+
+```haskell
 import Data.List
+import Data.List(nub, sort)
+import Data.List hiding (nub)
 ```
 * If you are using a GHCI you can use *:m + <Module Name>*
 ```
   Prelude> :m + Data.List
+  
+  --To import more than one module at once
+  Prelude> :m + Data.List Data.Map Data.Set
   ```
+  
   
 
 ## CABAL
