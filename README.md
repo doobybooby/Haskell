@@ -476,7 +476,7 @@ EX:
 * takes an element and a list and then puts that elemetn in between each pair of elements in the list. 
 
 EX:
-```haskell
+```ghci
 Prelude> :m + Data.List
 Prelude Data.List> intersperse '.' "HELLO"
 "H.E.L.L.O"
