@@ -461,6 +461,7 @@ returns: "ABCAb"
 ###### splitOneOf
 ###### endBy
 ###### chuncksOf
+###### replicate
 
 ###### repeat
 * returns a list created by a repeating a value
@@ -469,7 +470,26 @@ EX:
 
 ```
 
-### replicate
+## After import Data.List
+
+###### interperse
+* takes an element and a list and then puts that elemetn in between each pair of elements in the list. 
+
+EX:
+```haskell
+Prelude> :m + Data.List
+Prelude Data.List> intersperse '.' "HELLO"
+"H.E.L.L.O"
+```
+
+###### transpose 
+* transpose a list of lists. In 2D matrix, columns become rows, and rows become columns.
+
+
+###### intercalate
+* takes a list of lists and a list. Then insers that list in between all those lists and then flatten the result.
+
+
 
 ## Lambda 
 * "(\)" is used for lambda expression
@@ -513,15 +533,6 @@ Prelude> foldr (-)0 [1,2,3,4,5]
 3
 ```
 
-## Module
-
-###### How to add modules
-> :m + Name.module
-```
-EX:
-Prelude> :m + Data.List
-```
-
 
 ###### Just
 ###### Nothing
@@ -553,22 +564,27 @@ Prelude> :l cards
 
 ## Module
 * Haskell Module is a collection of related functions, types, and typeclasses.
-* to import a module, you use the key word *import* <Module Name>
-  * you can specify which functions to retrieve from the module. *import* <ModuleName(functions)>
-  * you import a module, then hide a specific function *import* <ModuelName> *hiding* (function)
+1. To import a module, you use the key word *import* <Module Name>
+2. You can specify which functions to retrieve from the module. *import* <ModuleName(functions)>
+3. You import a module, then hide a specific function *import* <ModuelName> *hiding* (function)
+4. If you have a module that uses the a function with same name, use *qualified* <ModuleName>
+5. Rename qualified modules using *as*
 
 ```haskell
 import Data.List
 import Data.List(nub, sort)
 import Data.List hiding (nub)
+import qualified Data.Map
+import qualified Data.Map as M
 ```
 * If you are using a GHCI you can use *:m + <Module Name>*
+
 ```
-  Prelude> :m + Data.List
+Prelude> :m + Data.List
   
-  --To import more than one module at once
-  Prelude> :m + Data.List Data.Map Data.Set
-  ```
+--To import more than one module at once
+Prelude> :m + Data.List Data.Map Data.Set
+```
   
   
 
