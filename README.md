@@ -471,25 +471,41 @@ EX:
 ```
 
 ## After import Data.List
+> Prelude> :m + Data.List
 
 ###### interperse
-* takes an element and a list and then puts that elemetn in between each pair of elements in the list. 
+* takes an element and a list and then puts that element in between each pair of elements in the list. 
 
 EX:
 ```ghci
-Prelude> :m + Data.List
 Prelude Data.List> intersperse '.' "HELLO"
 "H.E.L.L.O"
 ```
 
-###### transpose 
-* transpose a list of lists. In 2D matrix, columns become rows, and rows become columns.
-
-
 ###### intercalate
 * takes a list of lists and a list. Then insers that list in between all those lists and then flatten the result.
+```ghci
+Prelude Data.List> intersperse "." ["YES", "MAYBE", "NO"]
+YES.MAYBE.NO
+```
 
 
+###### transpose 
+* transpose a list of lists. In 2D matrix, columns become rows, and rows become columns.
+```ghci
+Prelude Data.List> transpose [['a','b','c'],['d','e','f'],['g','h','i']]
+["adg","beh",cfi"]
+```
+
+###### isPrefixOf
+###### isSuffixOf
+###### elemIndex
+###### findIndex/findIndices
+###### lines
+###### unlines
+###### words
+###### nubs
+###### \\
 
 ## Lambda 
 * "(\)" is used for lambda expression
@@ -519,7 +535,7 @@ EX:
 foldl (*)2 [1,2,3,4,5]
 240
 ```
-###### foldR (a->b->a) -> a -> [b] -> a
+###### foldr (a->b->a) -> a -> [b] -> a
 * Takes the second ARGUMENT, and last ITEM of the list, and apply function. Take the result and the (last-1) ITEM of the list, and so on.
 
 ```
@@ -585,7 +601,55 @@ Prelude> :m + Data.List
 --To import more than one module at once
 Prelude> :m + Data.List Data.Map Data.Set
 ```
-  
-  
+
+# DATA
+
+* Key word *data* is used when defining a new data type.
+> data Bool = True | False
+
+Create a new data called Shape
+Shape will have two constructors, Circle | Rectangle
+```haskell
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float
+```
+
+Check the type 
+```ghci
+Prelude> :t Circle
+Circle:: Float -> Float -> Float -> Shape
+Prelude> :t Rectangle
+Rectangle:: Float -> Float -> Float -> Float -> Shape
+```
+
+construct a function 
+```haskell
+surface :: Shape -> Float 
+surface (Circle _ _ r) = pi * r ^2
+surface (Rectangle x1 y1 x2 y2) = (abs (x2-x1)) * (abs (y2-y1))
+```
+"This is good but we will add a data type "Point" to make the shape more understandable"
+
+```haskell
+data Point = Point Float Float deriving (Show)
+data Shape = Circle Point Float | Rectangle Point Point deriving (Show)
+
+surface :: Shape -> Float  
+surface (Circle _ r) = pi * r ^ 2  
+surface (Rectangle (Point x1 y1) (Point x2 y2)) = (abs $ x2 - x1) * (abs $ y2 - y1) 
+```
+
+* To export the functions and types that are defined in a module
+module Name
+(functions()
+,function1()
+,function2()
+)where
+```haskell
+module Shapes
+( Point(..)
+, Shape(..)
+, surface
+, nudge
+)where
 
 ## CABAL
