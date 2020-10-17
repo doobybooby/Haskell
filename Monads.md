@@ -11,7 +11,8 @@
 
 A monad maybe thought of as an abstracting out a common pattern, or simply an applicative functor. Monads unwraps a value from a context and allow you to rewrap the value in the same context. Two main methods you should be aware of are, return and binding. Return, returns the value. Binding (represented by >>=). Monad gives you a Kleisli composition
 
------ EX: examples of monad are, Maybe and IO. Also if you know how to use "do" you are using binding. 
+## for a monad "M", a value of type "M a" represents having access to a value of type "a" within the context of the monad.
+
 ```
 Old Composition
 A -> B--\
