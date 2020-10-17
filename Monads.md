@@ -38,7 +38,12 @@ I.E. if you want a monad to get an IO, then check with a Maybe. You can create a
 
 newtype MaybeT m a = MaybeT {runMaybeT :: m(Maybe a)}
 
-return & binding ca
+# return = MaybeT . return . Just
+# binding, --> nothing -> return nothing
+#           \-> Just y -> runMaybeT (f y)
+
+# instance MonadTrans MaybeT where
+#     lift = MaybeT . liftM Just
 ```
 
 
