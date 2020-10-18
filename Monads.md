@@ -1,17 +1,8 @@
-# What are Monads
-
--monad behavior 
--- context means there may or may not be a value
-----EX: Maybe is a type of monads. Using the definition above,
-----    The context is Maybe, and Maybe has a value of "Just _" or "Nothing".
-----    If it is "Just _", you are able to rewrap the value,
-----    
-        Prelude> Just 2 
-        If it is "Nothing" there is no value to work with
+# 1. What are Monads
 
 A monad maybe thought of as an abstracting out a common pattern, or simply an applicative functor. Monads unwraps a value from a context and allow you to rewrap the value in the same context. Two main methods you should be aware of are, return and binding. Return, returns the value. Binding (represented by >>=). Monad gives you a Kleisli composition
 
-### for a monad "M", a value of type "M a" represents having access to a value of type "a" within the context of the monad.
+for a monad "***M***", a value of type "***M a***" represents having access to a value of type "***a***" within the context of the monad.
 
 ```
 Old Composition
@@ -25,6 +16,7 @@ A -> M(B)--\
             |-- A-> M(C)
 B -> M(C)--/
 ```
+
 
 ### What are monad transformer
 You can create a monad with the same functionality of 2 or more monads. 
@@ -42,9 +34,12 @@ newtype MaybeT m a = MaybeT {runMaybeT :: m(Maybe a)}
 # binding, --> nothing -> return nothing
 #           \-> Just y -> runMaybeT (f y)
 
-# instance MonadTrans MaybeT where
-#     lift = MaybeT . liftM Just
+# Lift, take the monad then lift it into a new context
+class MOnadTrans t where
+        lift :: (Monad m) => m a -> t m a 
 ```
+
+Partial 
 
 
 
