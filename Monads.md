@@ -18,13 +18,15 @@ A -> M(B)--\
             |-- A-> M(C)
 B -> M(C)--/
 ```
-Monads 
 
 # 2. In terms of Relex-FRP
 
+Behavior - a container for a value that can change over time. Not possible to be notified when the values change
 
+Event - abstracts the idea that something occurs or is updated at discrete point in time, ie clicking button. push oriented, notification when a value changes.
 
-
+Dynamic - abstraction that has a value at all points in time AND can notify when value is updated.
+(Event, behavior)
 
 # 3. What are monad transformer
 
